@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السعود العقارية - من نحن</title>
+    <meta name="description" content="تعرف على السعود العقارية: شركة رائدة في مجال العقارات بخبرة 25 عامًا. اكتشف رؤيتنا، رسالتنا، ومالك الشركة.">
+    <link rel="icon" type="image/x-icon" href="1/logo.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #222;
+            text-align: right;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #004d99, #002b66);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        header.scrolled {
+            background: rgba(0, 45, 102, 0.9);
+            padding: 10px 20px;
+        }
+
+        header.scrolled .logo img {
+            height: 50px;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #004d99, #002b66);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .logo img {
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #ffcc00;
+            padding: 5px;
+            background: #fff;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .logo:hover img {
+            border-color: #ff9900;
+            transform: rotate(15deg);
+        }
+
+        /* Company Name */
+        .company-name {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s;
+        }
+
+        .company-name:hover {
+            color: #004d99;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 45, 102, 0.9);
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        body.dark-mode .about-section {
+            background: #1e1e1e;
+        }
+
+        .about-section h2 {
+            font-size: 2.8rem;
+            color: #004d99;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        body.dark-mode .about-section p {
+            color: #ffffff;
+        }
+
+        .about-section .vision-mission {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-section .vision-mission div {
+            background: linear-gradient(to right, #004d99, #002b66);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 45%;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #fff;
+        }
+
+        body.dark-mode .about-section .vision-mission div {
+            background: linear-gradient(to right, #002b66, #001233);
+        }
+
+        .about-section .vision-mission div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-section .vision-mission h3 {
+            font-size: 1.8rem;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+
+        .about-section .vision-mission p {
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Owner Section */
+        .owner-section {
+            margin-top: 60px;
+        }
+
+        .owner-section h3 {
+            font-size: 2.2rem;
+            color: #004d99;
+            margin-bottom: 20px;
+        }
+
+        body.dark-mode .owner-section h3 {
+            color: #ffcc00;
+        }
+
+        .owner-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        body.dark-mode .owner-section p {
+            color: #ffffff;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #004d99, #002b66);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffcc00;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #004d99;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #004d99;
+    background: #ffcc00;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.location i {
+    margin-right: 10px;
+    color: #004d99;
+}
+
+.location:hover {
+    transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="1/logo.jpg" alt="شعار الشركة">
+            </div>
+            <div class="company-name">
+                السعود العقارية
+            </div>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <h2>من نحن</h2>
+        <p>
+            السعود العقارية هي شركة رائدة في مجال العقارات، تأسست عام 1998، وتتمتع بخبرة تزيد عن 25 عامًا في تقديم أفضل الحلول العقارية في الإمارات. نقدم خدماتنا لعملائنا الكرام بأعلى معايير الجودة والاحترافية.
+        </p>
+        
+        <div class="vision-mission">
+            <div>
+                <h3>رؤيتنا</h3>
+                <p>أن نكون الشركة الرائدة في تقديم الحلول العقارية المبتكرة في المنطقة.</p>
+            </div>
+            <div>
+                <h3>رسالتنا</h3>
+                <p>تقديم خدمات عقارية متميزة تلبي تطلعات عملائنا وتساهم في تنمية المجتمع.</p>
+            </div>
+        </div>
+        <div class="owner-section">
+            <h3>مالك الشركة</h3>
+            <p>السيد خالد سعود هو المالك لشركة السعود العقارية. والذي أسسها والده السيد سعود الشامسي حيث انه يتمتع بخبرة تزيد عن 30 عامًا في مجال العقارات، وقاد الشركة لتصبح واحدة من أبرز الشركات في المنطقة.</p>
+        </div>
+        <div class="location" data-aos="fade-up">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>📍 جميرا 3، شارع الوصل، دبي، الإمارات العربية المتحدة</span>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2025 السعود العقارية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <button class="dark-mode-toggle">🌙</button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // JavaScript for Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            darkModeToggle.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+
+        // JavaScript for Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // JavaScript for Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

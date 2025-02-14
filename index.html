@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السعود العقارية - الرئيسية</title>
+    <meta name="description" content="السعود العقارية: خبرة 25 عامًا في تقديم أفضل الحلول العقارية في الإمارات. اكتشف مشاريعنا الناجحة وخدماتنا المتميزة.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap">
+    <link rel="icon" type="image/x-icon" href="1/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #222;
+            text-align: right;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #004d99, #002b66);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        header.scrolled {
+            background: rgba(0, 45, 102, 0.9);
+            padding: 10px 20px;
+        }
+
+        header.scrolled .logo img {
+            height: 50px;
+        }
+
+        /* Logo Styles */
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #004d99, #002b66);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo img {
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #ffcc00;
+    padding: 5px;
+    background: #fff;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.logo:hover img {
+    border-color: #ff9900;
+    transform: rotate(15deg);
+}
+
+/* Company Name */
+.company-name {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s;
+}
+
+.company-name:hover {
+    color: #004d99;
+}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 45, 102, 0.9);
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('1/back1.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            animation: slideIn 0.8s ease-in-out;
+        }
+
+        .hero-content p {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #ffcc00, #ff9900);
+            color: #222;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .btn:hover {
+            background: linear-gradient(to right, #e6b800, #cc7700);
+            transform: scale(1.05);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(to right, #004d99, #002b66);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .stats-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            width: 220px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat h3 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: #ffcc00;
+        }
+
+        .stat p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+       /* Services Section */
+.services-section {
+    background: #f4f4f4;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+body.dark-mode .services-section {
+    background: #1e1e1e;
+}
+
+.services-section h2 {
+    font-size: 2.8rem;
+    color: #004d99;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service {
+    background: linear-gradient(to right, #004d99, #002b66);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease-in-out;
+    color: #fff;
+    overflow: hidden;
+}
+
+body.dark-mode .service {
+    background: linear-gradient(to right, #002b66, #001233);
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.service img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.service:hover img {
+    transform: scale(1.1);
+}
+
+.service h3 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background: #f4f4f4;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+body.dark-mode .testimonials-section {
+    background: #1e1e1e;
+}
+
+.testimonials-section h2 {
+    font-size: 2.8rem;
+    color: #004d99;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: linear-gradient(to right, #004d99, #002b66);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    color: #fff;
+}
+
+body.dark-mode .testimonial {
+    background: linear-gradient(to right, #002b66, #001233);
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    color: #fff;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+body.dark-mode .testimonial p {
+    color: #ffffff;
+}
+
+.testimonial h4 {
+    font-size: 1.3rem;
+    margin: 10px 0 5px;
+    color: #ffcc00;
+}
+
+.testimonial span {
+    font-size: 1rem;
+    color: #ddd;
+}
+
+body.dark-mode .testimonial span {
+    color: #ffffff;
+}
+
+        /* Footer */
+    /* Footer */
+footer {
+    background: linear-gradient(to right, #004d99, #002b66);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0; /* تم تصغير الحشوة (Padding) */
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem; /* تم تصغير حجم الخط */
+}
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffcc00;
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #004d99;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <img src="1/logo.jpg" alt="شعار الشركة">
+            </div>
+            <div class="company-name">
+                السعود العقارية
+            </div>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مرحباً بك في السعود العقارية</h1>
+            <p>خبرة 25 عامًا في تقديم أفضل الحلول العقارية في الإمارات</p>
+            <a href="projects.html" class="btn">تصفح المشاريع</a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2>أرقامنا تتحدث عنا</h2>
+        <div class="stats">
+            <div class="stat">
+                <h3>25+</h3>
+                <p>سنوات من الخبرة</p>
+            </div>
+            <div class="stat">
+                <h3>150+</h3>
+                <p>مشروع ناجح</p>
+            </div>
+            <div class="stat">
+                <h3>5000+</h3>
+                <p>عميل راضٍ</p>
+            </div>
+            <div class="stat">
+                <h3>10+</h3>
+                <p>جوائز عالمية</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <h2>خدماتنا المتميزة</h2>
+        <div class="services">
+            <div class="service">
+                <img src="1/11.jpg" alt="إدارة العقارات" loading="lazy">
+                <h3>إدارة العقارات</h3>
+                <p>نقدم حلولاً متكاملة لإدارة العقارات باحترافية عالية.</p>
+            </div>
+            <div class="service">
+                <img src="1/22.jpg" alt="تطوير المشاريع" loading="lazy">
+                <h3>تطوير المشاريع</h3>
+                <p>تصميم وتنفيذ مشاريع عقارية مبتكرة تلبي احتياجات السوق.</p>
+            </div>
+            <div class="service">
+                <img src="1/33.jpg" alt="الاستثمار العقاري" loading="lazy">
+                <h3>الاستثمار العقاري</h3>
+                <p>نصائح واستشارات لتحقيق أفضل عوائد استثمارية.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>آراء عملائنا</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="quote-icon">“</div>
+                <p>"شركة محترفة بمعنى الكلمة، ساعدتني في تحقيق أحلامي العقارية."</p>
+                <h4>محمد الظاهري</h4>
+                <span>مستثمر عقاري</span>
+            </div>
+            <div class="testimonial">
+                <div class="quote-icon">“</div>
+                <p>"تجربة رائعة مع فريق عمل متميز، أنصح الجميع بالتعامل معهم."</p>
+                <h4>فاطمة خالد</h4>
+                <span>مالكة عقار</span>
+            </div>
+            <div class="testimonial">
+                <div class="quote-icon">“</div>
+                <p>"خدماتهم متكاملة وفريق العمل دقيق جدًا في التنفيذ."</p>
+                <h4>علي المهيري</h4>
+                <span>مطور عقاري</span>
+            </div>
+            <div class="testimonial">
+                <div class="quote-icon">“</div>
+                <p>"السعود العقارية هي الخيار الأمثل لأي حد يدور على الجودة والاحترافية."</p>
+                <h4>سارة عبدالله</h4>
+                <span>مستثمرة عقارية</span>
+            </div>
+            <div class="testimonial">
+                <div class="quote-icon">“</div>
+                <p>"كانت تجربة رهيبة مع السعود العقارية، وأنصح الكل يتعامل وياهم."</p>
+                <h4>خالد فهد</h4>
+                <span>مستثمر عقاري</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2025 السعود العقارية. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <button class="dark-mode-toggle">🌙</button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // JavaScript for Dark Mode Toggle
+        const darkModeToggle = document.querySelector('.dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            darkModeToggle.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+
+        // JavaScript for Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // JavaScript for Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+
+        // JavaScript for Stats Counter
+        document.addEventListener("DOMContentLoaded", () => {
+            const stats = document.querySelectorAll('.stat h3');
+            stats.forEach(stat => {
+                const target = +stat.innerText.replace('+', '');
+                const increment = target / 100;
+                let count = 0;
+                const updateCount = () => {
+                    if (count < target) {
+                        stat.innerText = Math.ceil(count) + '+';
+                        count += increment;
+                        setTimeout(updateCount, 20);
+                    } else {
+                        stat.innerText = target + '+';
+                    }
+                };
+                updateCount();
+            });
+        });
+    </script>
+</body>
+</html>
